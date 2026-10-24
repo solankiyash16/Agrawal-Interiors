@@ -564,14 +564,11 @@ function initQuickChat() {
     const wa = $("#waCta");
     if (!wa) return;
 
-    // [ISSUE 3 FOR COLLEGE PROJECT]:
-    // Quick chat button on the bottom right should not work for now.
-    wa.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.warn("Issue 3: Quick chat button is currently disabled.");
-        toast("Quick chat is currently not working.", "error");
-    });
-
+    // Set dynamic WhatsApp link from BRAND data
+    wa.href = `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent("Hi Agrawal Brothers — I'd like a free consultation for my space.")}`;
+    wa.target = "_blank";
+    wa.rel = "noreferrer";
+}
     /*
     // =========================================================================
     // [SOLUTION FOR COLLEGE REPORT - STEP 3]:
