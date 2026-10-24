@@ -257,21 +257,10 @@ function renderPortfolio() {
             if (glow) glow.style.background = "";
         });
 
-        // [ISSUE 4 FOR COLLEGE PROJECT]:
-        // When clicking on the portfolio images, nothing should happen (modal popup disabled)
-        card.addEventListener("click", () => {
-            console.warn(`Issue 4: Clicked portfolio item (${card.dataset.id}), but modal popup is disabled.`);
-        });
-
-        /*
-        // =========================================================================
-        // [SOLUTION FOR COLLEGE REPORT - STEP 4]:
-        // To fix this later for your report, restore the openModal click handlers below:
-        // =========================================================================
+                // Open modal popup when clicked or with Enter key
         card.addEventListener("click", () => openModal(card.dataset.id));
         card.addEventListener("keydown", (e) => { if (e.key === "Enter") openModal(card.dataset.id); });
-        */
-    });
+
 }
 
 /* ---------- Modal ---------- */
