@@ -530,22 +530,12 @@ function initContact() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // [ISSUE 1 FOR COLLEGE PROJECT]:
-        // The form currently does NOT send to the email ID when clicked on submit.
-        console.error("Issue 1: Form submission blocked. Message not sent to email ID: " + BRAND.email);
-        toast("Error: Form submission failed! Could not send message to email ID.", "error");
-
-        /*
-        // =========================================================================
-        // [SOLUTION FOR COLLEGE REPORT - STEP 1]:
-        // When you want to fix this later for your report, replace the above error
-        // with the working mailto / email code below:
-        // =========================================================================
         const name = $("#fName").value.trim();
         const phone = $("#fPhone").value.trim();
         const email = $("#fEmail").value.trim();
         const req = $("#fReq").value;
 
+        // Validation
         if (name.length < 2) {
             toast("Please enter your name", "error");
             return;
@@ -556,15 +546,16 @@ function initContact() {
             return;
         }
 
+        // Construct email subject and body
         const subject = encodeURIComponent(`New Consultation Request from ${name}`);
         const body = encodeURIComponent(
             `Name: ${name}\nPhone: ${phone}\nEmail: ${email || "Not Provided"}\nRequirement: ${req}\n\nPlease contact me regarding my project.`
         );
 
+        // Send to email ID
         window.location.href = `mailto:${BRAND.email}?subject=${subject}&body=${body}`;
         toast("Opening your email client to send request…", "success");
         form.reset();
-        */
     });
 }
 
